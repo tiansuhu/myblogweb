@@ -10,7 +10,8 @@ const config = {
   responseType: 'json',
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
-    'ajaxRequested': 'ajaxRequested'
+    'ajaxRequested': 'ajaxRequested',
+    '':''//头验证
   }
 }
 

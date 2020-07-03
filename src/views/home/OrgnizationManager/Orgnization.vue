@@ -32,7 +32,7 @@
           </el-dropdown>
         </el-tag>
         <el-button type="text" icon="el-icon-document-add">新增组织</el-button>
-        <el-button type="text" icon="el-icon-document-add">新增用户</el-button>
+        <el-button type="text" icon="el-icon-document-add" @click="user.adduservisible = true">新增用户</el-button>
       </el-header>
 
       <el-main>
@@ -44,11 +44,24 @@
         </el-table>
       </el-main>
     </el-container>
+
+     <!--用户信息 -->
+     <el-drawer
+    title="新增用户"
+    :with-header="false"
+    :visible.sync="user.adduservisible"
+    :direction="'rtl'"
+    size="50"
+    ref="user-drawers"
+  >
+<user @closeForm="closeForm"></user>
+     </el-drawer>
   </el-container>
 </template>
 
 <script>
 import submenu from "@/components/Menu/submenu.vue";
+import user from "@/views/home/UserManager/User.vue";
 export default {
   data() {
     const item = {
@@ -57,6 +70,10 @@ export default {
       address: "上海市普陀区金沙江路 1518 弄"
     };
     return {
+      user:{
+        //添加用户操作
+        adduservisible:false,//显示隐藏添加用户页面
+      },
       tableData:[],
       tableData1: Array(20).fill(item),
        item:item,
@@ -100,7 +117,8 @@ export default {
     };
   },
   components: {
-    submenu
+    submenu,
+    user
   },
   methods:{
     clickFun(item){
@@ -111,6 +129,9 @@ export default {
         this.tableData = [];
       }
       console.log(item);
+    },
+    closeForm(){
+      this.user.adduservisible = false;
     }
   }
 };
