@@ -8,7 +8,7 @@
 
     <el-dropdown>
       <span class="el-dropdown-link">
-        <span>{{UserInfo.name}}</span>
+        <span>{{UserInfo.userName}}</span>
         <i class="el-icon-caret-bottom"></i>
       </span>
       <el-dropdown-menu slot="dropdown">

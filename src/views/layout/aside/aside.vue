@@ -48,7 +48,7 @@ export default {
         //加载菜单数据
         getMenu(params).then(res => {
           let data = res[1];
-          this.$store.dispatch('Menu/setMenuDada', data);
+          this.$store.dispatch('Menu/setMenuDada', data.data);
         });
     }
     

@@ -24,8 +24,8 @@ Mock.mock('/test/city', 'get', () => {
 Mock.mock('/menu','post',(postjs)=>{
   let ico = ['el-icon-s-tools','el-icon-user-solid','el-icon-s-home','el-icon-s-custom','el-icon-menu']
   let menutype={
-    link:"link",
-    menuparentNode:"menuparentNode"
+    link:"0",
+    menuparentNode:"1"
   }
 let munulist = []; 
      var menuData = {

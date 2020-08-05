@@ -5,11 +5,7 @@ import store from './store/index'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/css/app.css'
-import './api/mock.js'
-import './api/Usermock'
-import './api/Orgmock'
 import 'nprogress/nprogress.css'
-import './vue.config'
 
 // 请求模拟数据
 // axios('/test/city').then(req => {
@@ -17,6 +13,8 @@ import './vue.config'
 // })
 
 Vue.use(ElementUI)
+
+Vue.prototype.$message = ElementUI.Message;
 Vue.config.productionTip = false
 new Vue({
   router,

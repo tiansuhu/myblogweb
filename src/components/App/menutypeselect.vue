@@ -19,7 +19,7 @@
 export default {
     data() {
          return {
-            optionsList: [{name:"菜单",id:"link"},{id:"menuparentNode",name:"目录"} ]
+            optionsList: [{name:"菜单",id:1},{id:0,name:"目录"} ]
          } 
        
     },
@@ -50,9 +50,9 @@ export default {
     },
     value: {
       default: () => {
-        return ""
+        return 0
       },
-      type: String
+      type: Number
     },
     
   },

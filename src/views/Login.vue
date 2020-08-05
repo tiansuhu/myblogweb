@@ -57,8 +57,8 @@ export default {
         //验证
         if (valid) {
           let params = {
-            code: this.ruleForm2.username,
-            password: this.ruleForm2.password
+            userCode: this.ruleForm2.username,
+            userPassword: this.ruleForm2.password
           };
           this.logining = true;
           //   setTimeout(() => { //延时5秒看看效果
@@ -66,11 +66,11 @@ export default {
             if (res[1]) {
               let data = res[1];
               if (data.success) {
-                setUserStorage("user", JSON.stringify(data)); 
-                this.$store.dispatch("UserStore/setUser", data);
+                setUserStorage("user", JSON.stringify(data.data)); 
+                this.$store.dispatch("UserStore/setUser", data.data);
                 this.$router.push({ path: "/home" });
               } else {
-                this.$alert(data.msg, "info", { confirmButtonText: "ok" });
+                this.$alert(data.msg, "提示", { confirmButtonText: "ok" });
               }
             }
 

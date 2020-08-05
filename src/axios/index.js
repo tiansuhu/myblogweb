@@ -3,15 +3,15 @@ import axios from 'axios'
 import qs from 'qs'
 import { getLocalStorage, setLocalStorage, localforageIterate } from './local'
 
+
 const config = {
   baseURL: process.env.VUE_APP_BASEURL,
   timeout: 20000,
   withCredentials: !true, // allowed to take cookie
   responseType: 'json',
   headers: {
-    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
-    'ajaxRequested': 'ajaxRequested',
-    
+    'Content-Type':'application/json',//'application/x-www-form-urlencoded;charset=utf-8',
+    'ajaxRequested':'ajaxRequested',
   }
 }
 
@@ -41,6 +41,7 @@ axiosIns.interceptors.response.use(
   },
   (error) => {
     // if (isDev) return getLocalStorage(error.config.url)
+    
     return [error, undefined]
   }
 )
@@ -57,7 +58,7 @@ export default {
     return axiosIns({
       method: 'post',
       url,
-      data: params,//qs.stringify(params),
+      data:JSON.stringify(params) ,//params,// qs.stringify(params),//转化成参数形式  
       headers
     })
   },

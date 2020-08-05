@@ -66,7 +66,7 @@ router.beforeEach((to, from, next) => {
         } else {//通过当前用户获取当前用户的菜单 并动态加载路由
           getMenu(store.getters["UserStore/getUser"]).then(res => {
             let data = res[1];
-            store.dispatch('Menu/setMenuDada', data);
+            store.dispatch('Menu/setMenuDada', data.data);
             let menuData = store.getters['Menu/getMenuData']//
             let getRouter = InitAsyncRounter(menuData) //过滤路由  
             router.addRoutes(getRouter);

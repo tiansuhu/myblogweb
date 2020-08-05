@@ -16,23 +16,23 @@
   <div class="menu">
     <template v-for="list in this.menuList">
       <!-- //循环数据；数据menuList通过props传递 -->
-      <el-submenu index="1" v-if="list.children.length>0" :key="list.menuid" :index="list.menuid">
+      <el-submenu index="1" v-if="list.children.length>0" :key="list.menu.menuid" :index="list.menu.menuid">
         <template slot="title">
-          <i :class="list.ico||'el-icon-s-tools'"></i>
-          <span slot="title">{{ list.displayName}}</span>
+          <i :class="list.menu.ico||'el-icon-s-tools'"></i>
+          <span slot="title">{{ list.menu.displayName}}</span>
         </template>
         <!-- //当有子集数据再次使用这个模板，:menuList通过props传递 -->
         <Menu :menuList="list.children"></Menu>
       </el-submenu>
       <el-menu-item
        v-else 
-       :index="list.path" 
-       :key="list.menuid" 
+       :index="list.menu.path" 
+       :key="list.menu.menuid" 
 
        >
         <!-- style="padding-left: 38px;" -->
-        <i :class="list.ico"></i>
-        <span>{{list.displayName}}</span>
+        <i :class="list.menu.ico"></i>
+        <span>{{list.menu.displayName}}</span>
       </el-menu-item>
     </template>
   </div>
