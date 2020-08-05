@@ -13,16 +13,9 @@ import 'nprogress/nprogress.css'
 // })
 
 Vue.use(ElementUI)
-<<<<<<< HEAD
 
 Vue.prototype.$message = ElementUI.Message;
 Vue.config.productionTip = false
-=======
-Vue.config.productionTip = false
-
-
-
->>>>>>> 701ec46cac2561a29da2d4e23e66b0409dfdd51c
 new Vue({
   router,
   store,
