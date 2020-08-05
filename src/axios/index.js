@@ -3,7 +3,6 @@ import axios from 'axios'
 import qs from 'qs'
 import { getLocalStorage, setLocalStorage, localforageIterate } from './local'
 
-
 const config = {
   baseURL: process.env.VUE_APP_BASEURL,
   timeout: 20000,
