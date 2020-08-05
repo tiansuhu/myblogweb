@@ -11,7 +11,7 @@ const config = {
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
     'ajaxRequested': 'ajaxRequested',
-    '':''//头验证
+    
   }
 }
 
@@ -40,7 +40,7 @@ axiosIns.interceptors.response.use(
     return [null, data]
   },
   (error) => {
-    if (isDev) return getLocalStorage(error.config.url)
+    // if (isDev) return getLocalStorage(error.config.url)
     return [error, undefined]
   }
 )
